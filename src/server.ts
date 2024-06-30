@@ -1,4 +1,4 @@
-
+import 'dotenv/config'
 import { fastify, FastifyInstance } from "fastify";
 import { userRouter } from "./routes/user.router.js";
 
@@ -12,5 +12,5 @@ app.register(userRouter, {
 
 
 app.listen({
-  port: 3000
+  port: process.env.Port || 3000
 }, () => console.log('server is running on port 3000 🎉🚀'))
